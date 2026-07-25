@@ -1,0 +1,125 @@
+.decorations {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ------------------------------ */
+/* TODAS AS IMAGENS */
+/* ------------------------------ */
+
+.decorations img {
+
+    display: block;
+
+    filter:
+        drop-shadow(0 0 3px rgba(255, 255, 255, .85)) drop-shadow(0 0 6px rgba(255, 255, 255, .45)) drop-shadow(8px 10px 14px rgba(0, 0, 0, .28));
+
+    transition: .35s ease;
+
+}
+
+.decorations img:hover {
+
+    transform: scale(1.04);
+
+}
+
+/* ------------------------------ */
+/* GLOBO */
+/* ------------------------------ */
+
+.disco {
+
+    position: absolute;
+
+    top: -2%;
+
+    right: 8%;
+
+    transform: rotate(10deg);
+
+}
+
+/* ------------------------------ */
+/* ALTO-FALANTE */
+/* ------------------------------ */
+
+.speaker {
+
+    position: absolute;
+
+    bottom: -5%;
+
+    left: -4%;
+
+    transform: rotate(-10deg);
+
+}
+
+/* ------------------------------ */
+/* MICROFONE */
+/* ------------------------------ */
+
+.microphone {
+
+    position: absolute;
+
+    bottom: 3%;
+
+    right: -2%;
+
+    transform: rotate(16deg);
+
+}
+
+/* ------------------------------ */
+/* BOCA */
+/* ------------------------------ */
+
+.mouth {
+
+    position: absolute;
+
+    top: 20%;
+
+    left: 8%;
+
+    transform: rotate(-10deg);
+
+}
+
+/* ------------------------------ */
+/* DEDO */
+/* ------------------------------ */
+
+.finger {
+
+    position: absolute;
+
+    top: 27%;
+
+    right: 20%;
+
+    transform: rotate(4deg);
+
+}
+
+/* ------------------------------ */
+/* MULHER */
+/* ------------------------------ */
+
+.woman {
+
+    position: absolute;
+
+    bottom: -2%;
+
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-3deg);
+
+    opacity: .95;
+
+}

@@ -1,0 +1,36 @@
+:root {
+
+  --pink: #e61d73;
+  --blue: #42e8ff;
+  --green: #d8ff43;
+  --black: #141414;
+  --white: #ffffff;
+
+  --font-title: sans-serif;
+  --font-body: sans-serif;
+  --font-marker: cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+
+  width: 100%;
+  min-height: 100vh;
+
+}
+
+body {
+
+  background: var(--pink);
+
+  color: white;
+
+  font-family: var(--font-body);
+
+}
