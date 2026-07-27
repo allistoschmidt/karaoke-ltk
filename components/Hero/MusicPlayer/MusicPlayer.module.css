@@ -1,0 +1,33 @@
+.player {
+
+    position: fixed;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    background: #000;
+
+    color: white;
+
+    border: 3px solid white;
+
+    padding: 14px 20px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transform: rotate(-4deg);
+
+    box-shadow: 5px 5px 0 hotpink;
+
+    z-index: 9999;
+
+}
+
+.player:hover {
+
+    transform: scale(1.05) rotate(-4deg);
+
+}

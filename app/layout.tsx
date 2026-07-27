@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Bungee, Poppins, Permanent_Marker } from "next/font/google";
 import "./globals.css";
+import MusicPlayer from "@/components/Hero/MusicPlayer/MusicPlayer";
+import { Lilita_One } from "next/font/google";
 
 const bungee = Bungee({
   subsets: ["latin"],
@@ -20,6 +22,12 @@ const marker = Permanent_Marker({
   variable: "--font-marker",
 });
 
+const lilita = Lilita_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-lilita",
+});
+
 export const metadata: Metadata = {
   title: "LTK Magazine",
   description: "Karaokê do Clã",
@@ -33,9 +41,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${bungee.variable} ${poppins.variable} ${marker.variable}`}
+        className={`${bungee.variable} ${poppins.variable} ${marker.variable} ${lilita.variable}`}
       >
         {children}
+        <MusicPlayer />
       </body>
     </html>
   );

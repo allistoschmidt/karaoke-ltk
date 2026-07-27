@@ -1,9 +1,14 @@
 "use client";
 
+import { useState } from "react";
+
 import styles from "./Hero.module.css";
 import Decorations from "./Decorations/Decorations";
+import Form from "./Form/Form";
 
 export default function Hero() {
+
+    const [openForm, setOpenForm] = useState(false);
 
     async function glitterExplosion() {
 
@@ -53,43 +58,60 @@ export default function Hero() {
 
     }
 
+    function handleOpenForm() {
+
+        glitterExplosion();
+        setOpenForm(true);
+
+    }
+
     return (
 
-        <section className={styles.hero}>
+        <>
 
-            <div className={styles.paper}></div>
+            <section className={styles.hero}>
 
-            <Decorations />
+                <div className={styles.paper}></div>
 
-            <div className={styles.poster}>
+                <Decorations />
 
-                <span className={styles.edition}>
-                    LTK MAGAZINE
-                </span>
+                <div className={styles.poster}>
 
-                <h1 className={styles.title}>
-                    KARAOKÊ
-                </h1>
+                    <span className={styles.edition}>
+                        An LTK Production
+                    </span>
 
-                <p className={styles.subtitle}>
-                    edição especial 2026
-                </p>
+                    <h1 className={styles.title}>
+                        <span>KARA</span>
+                        <span>OKÊ</span>
+                    </h1>
 
-                <div className={styles.tagline}>
-                    CONHECE ESSE SOM?
+                    <p className={styles.subtitle}>
+                        edição especial 2026
+                    </p>
+
+                    <div className={styles.tagline}>
+                        Vem cantar com a gente!
+                    </div>
+
+                    <button
+                        id="heroButton"
+                        className={styles.button}
+                        onMouseEnter={glitterExplosion}
+                        onClick={handleOpenForm}
+                    >
+                        COMEÇAR INSCRIÇÃO
+                    </button>
+
                 </div>
 
-                <button
-                    id="heroButton"
-                    className={styles.button}
-                    onMouseEnter={glitterExplosion}
-                >
-                    COMEÇAR INSCRIÇÃO
-                </button>
+            </section>
 
-            </div>
+            {openForm && (
+                <Form />
+            )}
 
-        </section>
+        </>
 
     );
 

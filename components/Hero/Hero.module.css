@@ -27,32 +27,83 @@
 
 .title {
 
-    font-family: var(--font-title);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    font-size: clamp(6rem, 13vw, 10rem);
-
-    line-height: .85;
-
-    text-align: center;
+    position: relative;
+    z-index: 5;
 
     text-transform: uppercase;
+
+}
+
+.title span {
+
+    font-family: var(--font-title);
+
+    font-size: clamp(5rem, 12vw, 9rem);
+
+    line-height: .82;
 
     color: white;
 
     text-shadow:
-        5px 5px 0 #111;
+        6px 6px 0 #111;
 
-    position: relative;
+    display: inline-block;
 
-    z-index: 5;
+    transform-origin: center;
+
+}
+
+.title span:first-child {
+
+    transform: rotate(-3deg) translateX(-22px);
+
+    animation: karaFloat 5s ease-in-out infinite,
+        karaBlink 4.8s infinite;
+
+}
+
+.title span:last-child {
+
+    color: #42E8FF;
+
+    transform: rotate(2deg) translateX(20px);
+
+    animation: okeFloat 5s ease-in-out infinite,
+        okeBlink 4.8s infinite .25s;
 
 }
 
 .edition {
 
-    letter-spacing: 4px;
+    display: inline-block;
 
-    font-weight: bold;
+    padding: 8px 18px;
+
+    margin-bottom: 30px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-size: .95rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    transform: rotate(-2deg);
+
+    box-shadow: 5px 5px 0 #ffffff33;
+
+    position: relative;
+
+    z-index: 5;
 
 }
 
@@ -78,36 +129,38 @@
 
     z-index: 5;
 
+    text-shadow:
+        1px 1px 0 #111,
+        -1px 1px 0 #111,
+        1px -1px 0 #111,
+        -1px -1px 0 #111;
+
 }
 
 .button {
+    font-family: var(--font-body);
+
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 
     margin-top: 60px;
-
     padding: 18px 42px;
 
     background: #fff;
-
     color: #111;
 
     border: none;
-
     border-radius: 20px;
 
     cursor: pointer;
-
-    font-size: 1rem;
-
-    font-weight: 700;
 
     box-shadow: 8px 8px 0 #111;
 
     transform: translateY(-35px) rotate(-2deg);
 
-    transition:
-        transform .25s,
-        box-shadow .25s;
-
+    transition: transform .25s, box-shadow .25s;
 }
 
 .button:hover {
@@ -163,5 +216,119 @@
     z-index: 2;
 
     pointer-events: none;
+
+}
+
+@media (max-width: 768px) {
+
+    .tagline {
+
+        transform: none;
+
+        width: 100%;
+
+        text-align: center;
+
+        font-size: 1.8rem;
+
+    }
+
+}
+
+@keyframes karaFloat {
+
+    0%,
+    100% {
+        transform: rotate(-3deg) translateX(-22px);
+    }
+
+    50% {
+        transform: rotate(-2deg) translateX(-22px) translateY(-3px);
+    }
+
+}
+
+@keyframes okeFloat {
+
+    0%,
+    100% {
+        transform: rotate(2deg) translateX(20px);
+    }
+
+    50% {
+        transform: rotate(3deg) translateX(20px) translateY(3px);
+    }
+
+}
+
+@keyframes karaBlink {
+
+    0%,
+    82%,
+    100% {
+
+        filter: brightness(1);
+
+    }
+
+    83% {
+
+        filter: brightness(.45);
+
+    }
+
+    84% {
+
+        filter: brightness(1.35);
+
+    }
+
+    85% {
+
+        filter: brightness(.6);
+
+    }
+
+    86% {
+
+        filter: brightness(1.2);
+
+    }
+
+}
+
+@keyframes okeBlink {
+
+    0%,
+    88%,
+    100% {
+
+        filter: brightness(1);
+
+    }
+
+    89% {
+
+        filter: brightness(.4);
+
+    }
+
+    90% {
+
+        filter: brightness(1.45);
+
+    }
+
+    91% {
+
+        filter: brightness(.55);
+
+    }
+
+    92% {
+
+        filter: brightness(1.25);
+
+    }
 
 }

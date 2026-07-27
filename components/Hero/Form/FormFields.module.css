@@ -1,0 +1,943 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    animation: fadeIn .35s ease;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #222;
+    line-height: 1.1;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.field label {
+    color: #ff2d95;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.field input,
+.field textarea {
+
+    width: 100%;
+
+    padding: 18px 20px;
+
+    border-radius: 18px;
+
+    border: 3px solid #ececec;
+
+    background: #fff;
+
+    font-size: 1rem;
+
+    transition: .25s;
+
+    font-family: inherit;
+
+}
+
+.field input:hover {
+
+    border-color: #ffc1e1;
+
+}
+
+.field input:focus,
+.field textarea:focus {
+
+    outline: none;
+
+    border-color: #ff2d95;
+
+    box-shadow: 0 0 0 6px rgba(255, 45, 149, .12);
+
+}
+
+.radioGroup {
+
+    display: flex;
+
+    gap: 30px;
+
+    margin-top: 6px;
+
+}
+
+.radio {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #fff8fc;
+
+    border: 2px solid #ffd3ea;
+
+    padding: 12px 18px;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    font-weight: 700;
+
+}
+
+.radio:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #ff2d95;
+
+}
+
+.radio input {
+
+    width: 18px;
+
+    height: 18px;
+
+}
+
+.buttons {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+}
+
+.button {
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 18px;
+
+    padding: 16px 28px;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+
+    transition: .25s;
+
+}
+
+.primary {
+
+    background: linear-gradient(135deg, #ff2d95, #ff5ab0);
+
+    color: white;
+
+    box-shadow: 0 10px 24px rgba(255, 45, 149, .28);
+
+}
+
+.primary:hover {
+
+    transform: translateY(-3px) scale(1.03);
+
+}
+
+.secondary {
+
+    background: #f2f2f2;
+
+    color: #333;
+
+}
+
+.secondary:hover {
+
+    background: #e6e6e6;
+
+}
+
+.error {
+
+    color: #d62828;
+
+    font-weight: 700;
+
+}
+
+.priceBox {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+}
+
+.priceBox>div {
+
+    background: linear-gradient(180deg, #fff, #fff7fb);
+
+    border: 2px solid #ffd3ea;
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    text-align: center;
+
+}
+
+.priceBox h2 {
+
+    color: #ff2d95;
+
+    font-size: 2rem;
+
+    margin-top: 8px;
+
+}
+
+.priceBox h3 {
+
+    font-size: 1.7rem;
+
+    margin-top: 8px;
+
+}
+
+.pixBox {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background: #fff9fc;
+
+    border: 3px dashed #ff2d95;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+}
+
+.pixBox img {
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+
+}
+
+.pixText {
+
+    width: 100%;
+
+    min-height: 120px;
+
+    resize: none;
+
+    border: none;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    line-height: 1.5;
+
+    font-size: .9rem;
+
+}
+
+.infoBox {
+
+    background: linear-gradient(135deg, #fff7fb, #fff);
+
+    border-left: 6px solid #ff2d95;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+}
+
+.menuBox {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+.menuItem {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 22px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border: 2px solid #f3f3f3;
+
+    transition: .2s;
+
+}
+
+.menuItem:hover {
+
+    transform: translateX(6px);
+
+    border-color: #ff2d95;
+
+}
+
+.menuItem strong {
+
+    color: #ff2d95;
+
+    font-size: 1.15rem;
+
+}
+
+.success {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 24px;
+
+    padding: 40px 0;
+
+}
+
+.successEmoji {
+
+    font-size: 5rem;
+
+    animation: bounce 1s infinite alternate;
+
+}
+
+.successTitle {
+
+    font-size: 2.8rem;
+
+    font-weight: 900;
+
+}
+
+.successCard {
+
+    background: #fff7fb;
+
+    border: 2px solid #ff2d95;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    width: 100%;
+
+}
+
+.thanks {
+
+    color: #ff2d95;
+
+    font-weight: 800;
+
+    font-size: 1.3rem;
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(18px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: none;
+
+    }
+
+}
+
+@keyframes bounce {
+
+    from {
+
+        transform: translateY(0);
+
+    }
+
+    to {
+
+        transform: translateY(-10px);
+
+    }
+
+}
+
+.priceGrid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+.priceCard,
+.priceCardPromo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 250px;
+
+    padding: 32px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    background: #fff;
+
+    border: 2px solid #ffd6ea;
+
+}
+
+.priceCardPromo {
+
+    border: 3px solid #ff2d95;
+
+    box-shadow: 0 10px 30px rgba(255, 45, 149, .15);
+
+}
+
+.priceBadge,
+.priceBadgeGray {
+
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+}
+
+.priceBadge {
+
+    background: #ff2d95;
+
+    color: white;
+
+}
+
+.priceBadgeGray {
+
+    background: #efefef;
+
+}
+
+.priceCard h2,
+.priceCardPromo h2 {
+
+    font-size: 3rem;
+
+    font-weight: 900;
+
+    margin: 20px 0 10px;
+
+}
+
+.priceCardPromo h2 {
+
+    color: #ff2d95;
+
+}
+
+.priceCardPromo p {
+
+    color: #27ae60;
+
+    font-weight: 700;
+
+}
+
+.whatsBox {
+
+    text-align: center;
+
+    background: #f4fff8;
+
+    border: 3px solid #25D366;
+
+    border-radius: 24px;
+
+    padding: 34px;
+
+}
+
+.whatsNumber {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 12px auto;
+
+    padding: 22px 34px;
+
+    border-radius: 18px;
+
+    background: #25D366;
+
+    color: #fff;
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+    box-shadow: 0 10px 24px rgba(37, 211, 102, .35);
+
+}
+
+.normalPrice {
+
+    color: #ff2d95;
+
+    font-size: 3rem;
+
+    font-weight: 900;
+
+}
+
+.priceCard p {
+
+    color: #666;
+
+    font-size: 1rem;
+
+}
+
+.priceCard p {
+
+    margin-top: 6px;
+
+    color: #666;
+
+    font-size: 1rem;
+
+}
+
+.whatsBox h2 {
+
+    color: #1e1e1e;
+
+    font-size: 2.2rem;
+
+    font-weight: 900;
+
+    margin-bottom: 16px;
+
+}
+
+.whatsBox p {
+
+    color: #444;
+
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
+
+}
+
+.whatsBox small {
+
+    display: block;
+
+    margin-top: 20px;
+
+    color: #666;
+
+    font-size: .95rem;
+
+}
+
+@media (max-width:768px) {
+
+    .priceGrid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .priceCard,
+    .priceCardPromo {
+
+        min-height: auto;
+
+    }
+
+    .whatsNumber {
+
+        width: 100%;
+
+        font-size: 1.4rem;
+
+    }
+
+}
+
+.successText {
+
+    text-align: center;
+
+    color: #555;
+
+    font-size: 1.15rem;
+
+    line-height: 1.7;
+
+    max-width: 520px;
+
+}
+
+.successCard h2 {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    color: #222;
+
+}
+
+.successCard p {
+
+    text-align: center;
+
+    color: #666;
+
+    margin-top: 18px;
+
+    line-height: 1.6;
+
+}
+
+.finish {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+}
+
+.finishTitle {
+
+    font-size: 4rem;
+
+    font-weight: 900;
+
+    color: #ff2d95;
+
+    letter-spacing: 2px;
+
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, .12);
+
+}
+
+.finishSubtitle {
+
+    margin-top: 10px;
+
+    color: #666;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+.finishDivider {
+
+    width: 140px;
+
+    height: 4px;
+
+    margin: 30px auto;
+
+    border-radius: 999px;
+
+    background: linear-gradient(90deg, #ff2d95, #ffcf33);
+
+}
+
+.finishThanks {
+
+    font-size: 2.4rem;
+
+    color: #222;
+
+    font-weight: 900;
+
+}
+
+.finishText {
+
+    max-width: 520px;
+
+    margin: 20px auto 0;
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+    color: #555;
+
+}
+
+.confetti,
+.confetti2 {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
+.confetti::before,
+.confetti2::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -150px;
+
+    background-image:
+
+        radial-gradient(#ff2d95 2px, transparent 2px),
+
+        radial-gradient(#ffcf33 2px, transparent 2px),
+
+        radial-gradient(#54d9ff 2px, transparent 2px),
+
+        radial-gradient(#7cffb2 2px, transparent 2px);
+
+    background-size:
+
+        120px 120px,
+
+        160px 160px,
+
+        180px 180px,
+
+        140px 140px;
+
+    animation: glitterExplosion 8s linear infinite;
+
+    opacity: .55;
+
+}
+
+.confetti2::before {
+
+    animation-delay: 2s;
+
+    transform: rotate(25deg);
+
+}
+
+.finishDiscLeft {
+
+    position: absolute;
+
+    left: -45px;
+
+    top: 35px;
+
+    animation: spin 12s linear infinite;
+
+}
+
+.finishDiscRight {
+
+    position: absolute;
+
+    right: -45px;
+
+    bottom: 35px;
+
+    animation: spin 12s linear infinite reverse;
+
+}
+
+@keyframes glitterExplosion {
+
+    0% {
+
+        transform: scale(.6) rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: .7;
+
+    }
+
+    100% {
+
+        transform: scale(1.35) rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+.whatsButton {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    width: 100%;
+
+    padding: 22px 26px;
+
+    border-radius: 22px;
+
+    text-decoration: none;
+
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+
+    color: #fff;
+
+    margin-top: 18px;
+
+    box-shadow: 0 14px 30px rgba(37, 211, 102, .35);
+
+    transition: .25s;
+
+}
+
+.whatsButton:hover {
+
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow: 0 18px 40px rgba(37, 211, 102, .45);
+
+}
+
+.whatsButton span {
+
+    font-size: 2.4rem;
+
+}
+
+.whatsButton div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+.whatsButton strong {
+
+    font-size: 1.25rem;
+
+    font-weight: 900;
+
+    color: #fff;
+
+}
+
+.whatsButton small {
+
+    color: rgba(255, 255, 255, .9);
+
+    font-size: .9rem;
+
+}

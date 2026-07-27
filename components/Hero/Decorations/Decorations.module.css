@@ -38,7 +38,7 @@
 
     right: 8%;
 
-    transform: rotate(10deg);
+    animation: discoFlip 3s infinite steps(1);
 
 }
 
@@ -54,7 +54,7 @@
 
     left: -4%;
 
-    transform: rotate(-10deg);
+    animation: speakerBounce 2.2s infinite steps(1);
 
 }
 
@@ -121,5 +121,102 @@
     transform: translateX(-50%) rotate(-3deg);
 
     opacity: .95;
+
+}
+
+@keyframes discoSpin {
+
+    /* posição A */
+
+    0%,
+    42% {
+
+        transform:
+            rotate(10deg) scaleX(1);
+
+    }
+
+    /* passando "de lado" */
+
+    48% {
+
+        transform:
+            rotate(0deg) scaleX(.08);
+
+    }
+
+    /* posição B */
+
+    54%,
+    92% {
+
+        transform:
+            rotate(-10deg) scaleX(1);
+
+    }
+
+    /* volta "de lado" */
+
+    98% {
+
+        transform:
+            rotate(0deg) scaleX(.08);
+
+    }
+
+    100% {
+
+        transform:
+            rotate(10deg) scaleX(1);
+
+    }
+
+}
+
+@keyframes discoFlip {
+
+    0%,
+    49% {
+
+        transform: rotate(10deg);
+
+    }
+
+    50%,
+    100% {
+
+        transform: rotate(-10deg);
+
+    }
+
+}
+
+.speaker {
+
+    position: absolute;
+
+    bottom: -5%;
+
+    left: -4%;
+
+    animation: speakerFlip 2.8s infinite steps(1);
+
+}
+
+@keyframes speakerFlip {
+
+    0%,
+    49% {
+
+        transform: rotate(-10deg);
+
+    }
+
+    50%,
+    100% {
+
+        transform: rotate(6deg);
+
+    }
 
 }
