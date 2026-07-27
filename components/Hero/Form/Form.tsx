@@ -7,7 +7,6 @@ import styles from "./Form.module.css";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
-import Step4 from "./Step4";
 import Success from "./Success";
 
 import { FormData } from "./types";
@@ -32,13 +31,14 @@ export default function Form() {
 
     });
 
-    console.log(formData);
-
     return (
 
         <div className={styles.overlay}>
 
-            <div className={styles.modal}>
+            <div
+                className={`${styles.modal} ${step === 4 ? styles.modalSuccess : ""
+                    }`}
+            >
 
                 <div className={styles.header}>
 
@@ -98,15 +98,11 @@ export default function Form() {
 
                     <div className={`${styles.dot} ${step >= 3 ? styles.active : ""}`} />
 
-                    <div className={`${styles.line} ${step >= 4 ? styles.activeLine : ""}`} />
-
-                    <div className={`${styles.dot} ${step >= 4 ? styles.active : ""}`} />
-
                 </div>
 
                 <p className={styles.stepText}>
 
-                    {step <= 4 ? `Etapa ${step} de 4` : "Inscrição concluída"}
+                    {step <= 3 ? `Etapa ${step} de 3` : "Inscrição concluída"}
 
                 </p>
 
@@ -157,20 +153,6 @@ export default function Form() {
                 )}
 
                 {step === 4 && (
-
-                    <Step4
-
-                        data={formData}
-
-                        next={() => setStep(5)}
-
-                        back={() => setStep(3)}
-
-                    />
-
-                )}
-
-                {step === 5 && (
 
                     <Success />
 

@@ -66,9 +66,9 @@
 
     position: absolute;
 
-    bottom: 3%;
+    bottom: 5%;
 
-    right: -2%;
+    right: -9%;
 
     transform: rotate(16deg);
 
@@ -82,9 +82,9 @@
 
     position: absolute;
 
-    top: 20%;
+    top: 15%;
 
-    left: 8%;
+    left: 3%;
 
     transform: rotate(-10deg);
 
@@ -100,7 +100,7 @@
 
     top: 27%;
 
-    right: 20%;
+    right: 3%;
 
     transform: rotate(4deg);
 
@@ -195,9 +195,9 @@
 
     position: absolute;
 
-    bottom: -5%;
+    bottom: 3%;
 
-    left: -4%;
+    left: -15%;
 
     animation: speakerFlip 2.8s infinite steps(1);
 

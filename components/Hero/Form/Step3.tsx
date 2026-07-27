@@ -20,6 +20,7 @@ const WHATSAPP =
     "https://wa.me/5541987913869?text=Olá!%20Segue%20o%20comprovante%20do%20pagamento%20da%20minha%20inscrição%20no%20Karaokê%202026.";
 
 export default function Step3({
+    data,
     next,
     back
 }: Props) {
@@ -27,6 +28,34 @@ export default function Step3({
     async function copiarPix() {
         await navigator.clipboard.writeText(PIX);
         alert("Chave PIX copiada!");
+    }
+
+    async function finalizar() {
+        try {
+
+            const response = await fetch("/api/inscricao", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (result.ok) {
+                next();
+            } else {
+                console.error(result);
+                alert("Erro ao realizar a inscrição.");
+            }
+
+        } catch (error) {
+
+            console.error(error);
+            alert("Erro de conexão. Tente novamente.");
+
+        }
     }
 
     return (
@@ -92,6 +121,11 @@ export default function Step3({
                     alt="QR Code PIX"
                     width={260}
                     height={260}
+                    style={{
+                        width: "100%",
+                        maxWidth: "260px",
+                        height: "auto",
+                    }}
                 />
 
                 <h3>
@@ -120,17 +154,13 @@ export default function Step3({
             <div className={styles.whatsBox}>
 
                 <h2>
-                    ✅ Confirmação da inscrição
+                    Confirmação da inscrição
                 </h2>
 
                 <p>
                     Após realizar o pagamento,
-                    envie o comprovante para:
+                    envie o comprovante clicando no botão abaixo:
                 </p>
-
-                <div className={styles.whatsNumber}>
-                    📲 (41) 98791-3869
-                </div>
 
                 <small>
                     Sua inscrição será confirmada após o recebimento do comprovante.
@@ -172,9 +202,9 @@ export default function Step3({
 
                 <button
                     className={`${styles.button} ${styles.primary}`}
-                    onClick={next}
+                    onClick={finalizar}
                 >
-                    Próximo →
+                    Finalizar inscrição 🎉
                 </button>
 
             </div>

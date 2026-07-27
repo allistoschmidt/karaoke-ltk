@@ -1,8 +1,13 @@
 .container {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 28px;
-    animation: fadeIn .35s ease;
+
+    animation: cardEnter .45s cubic-bezier(.2, .8, .2, 1);
+
 }
 
 .title {
@@ -45,15 +50,26 @@
 
     font-size: 1rem;
 
-    transition: .25s;
+    transition:
+
+        transform .2s,
+
+        border-color .2s,
+
+        box-shadow .2s,
+
+        background .2s;
 
     font-family: inherit;
 
 }
 
-.field input:hover {
+.field input:hover,
+.field textarea:hover {
 
-    border-color: #ffc1e1;
+    transform: translateY(-2px);
+
+    border-color: #ff9fd0;
 
 }
 
@@ -62,9 +78,15 @@
 
     outline: none;
 
+    transform: translateY(-2px);
+
     border-color: #ff2d95;
 
-    box-shadow: 0 0 0 6px rgba(255, 45, 149, .12);
+    box-shadow:
+
+        0 0 0 6px rgba(255, 45, 149, .12),
+
+        0 12px 30px rgba(255, 45, 149, .12);
 
 }
 
@@ -104,9 +126,15 @@
 
 .radio:hover {
 
-    transform: translateY(-2px);
+    transform:
+
+        translateY(-3px) scale(1.02);
 
     border-color: #ff2d95;
+
+    box-shadow:
+
+        0 10px 22px rgba(255, 45, 149, .15);
 
 }
 
@@ -142,7 +170,14 @@
 
     font-weight: 800;
 
-    transition: .25s;
+    transition:
+        transform .25s,
+        box-shadow .25s,
+        filter .25s;
+
+    position: relative;
+
+    overflow: hidden;
 
 }
 
@@ -158,7 +193,13 @@
 
 .primary:hover {
 
-    transform: translateY(-3px) scale(1.03);
+    transform:
+        translateY(-4px) scale(1.03);
+
+    filter: brightness(1.06);
+
+    box-shadow:
+        0 18px 36px rgba(255, 45, 149, .45);
 
 }
 
@@ -172,7 +213,58 @@
 
 .secondary:hover {
 
-    background: #e6e6e6;
+    background: #e9e9e9;
+
+    transform:
+        translateY(-3px);
+
+}
+
+.button:hover::before {
+
+    animation: shine .8s;
+
+}
+
+.button:active {
+
+    transform: scale(.97);
+
+}
+
+.button::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -130%;
+
+    width: 70%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(120deg,
+
+            transparent,
+
+            rgba(255, 255, 255, .45),
+
+            transparent);
+
+}
+
+@keyframes shine {
+
+    to {
+
+        left: 160%;
+
+    }
 
 }
 
@@ -226,6 +318,20 @@
 
 }
 
+.pixBox img {
+
+    width: min(100%, 260px);
+
+    height: auto;
+
+    display: block;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+
+}
+
 .pixBox {
 
     display: flex;
@@ -244,13 +350,19 @@
 
     padding: 30px;
 
+    color: #111;
+
 }
 
-.pixBox img {
+.pixBox h3 {
 
-    border-radius: 20px;
+    color: #111;
 
-    box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+}
+
+.pixBox p {
+
+    color: #444;
 
 }
 
@@ -266,6 +378,12 @@
 
     background: #fff;
 
+    color: #111 !important;
+
+    -webkit-text-fill-color: #111;
+
+    opacity: 1;
+
     border-radius: 18px;
 
     padding: 18px;
@@ -273,6 +391,8 @@
     line-height: 1.5;
 
     font-size: .9rem;
+
+    font-family: inherit;
 
 }
 
@@ -481,6 +601,10 @@
     font-weight: 800;
 
     margin-bottom: 20px;
+
+    background: #efefef;
+
+    color: #111;
 
 }
 
@@ -694,25 +818,39 @@
 
     position: relative;
 
-    overflow: hidden;
+    display: flex;
 
-    padding: 40px 20px;
+    flex-direction: column;
+
+    align-items: center;
 
     text-align: center;
 
+    gap: 22px;
+
+    padding: 50px 20px;
+
+    overflow: hidden;
+
+    border-radius: 26px;
+
+    background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+
+    color: #fff;
+
 }
 
-.finishTitle {
+.finishSubtitle {
 
-    font-size: 4rem;
+    margin-top: 8px;
 
-    font-weight: 900;
+    color: #d7d7d7;
 
-    color: #ff2d95;
+    font-weight: 700;
 
     letter-spacing: 2px;
 
-    text-shadow: 4px 4px 0 rgba(0, 0, 0, .12);
+    font-size: 1.05rem;
 
 }
 
@@ -730,11 +868,9 @@
 
 .finishDivider {
 
-    width: 140px;
+    width: 180px;
 
-    height: 4px;
-
-    margin: 30px auto;
+    height: 5px;
 
     border-radius: 999px;
 
@@ -744,9 +880,9 @@
 
 .finishThanks {
 
-    font-size: 2.4rem;
+    font-size: 2.3rem;
 
-    color: #222;
+    color: #ffffff;
 
     font-weight: 900;
 
@@ -754,15 +890,15 @@
 
 .finishText {
 
-    max-width: 520px;
+    max-width: 560px;
 
-    margin: 20px auto 0;
+    margin-top: 10px;
 
-    font-size: 1.15rem;
+    font-size: 1.1rem;
 
     line-height: 1.8;
 
-    color: #555;
+    color: #e4e4e4;
 
 }
 
@@ -836,11 +972,21 @@
 
     position: absolute;
 
-    right: -45px;
+    right: -75px;
 
-    bottom: 35px;
+    bottom: 30px;
+
+    width: 120px;
+
+    height: 120px;
 
     animation: spin 12s linear infinite reverse;
+
+    opacity: .9;
+
+    pointer-events: none;
+
+    z-index: 0;
 
 }
 
@@ -882,7 +1028,7 @@
 
     width: 100%;
 
-    padding: 22px 26px;
+    padding: 26px;
 
     border-radius: 22px;
 
@@ -892,7 +1038,7 @@
 
     color: #fff;
 
-    margin-top: 18px;
+    margin-top: 24px;
 
     box-shadow: 0 14px 30px rgba(37, 211, 102, .35);
 
@@ -939,5 +1085,130 @@
     color: rgba(255, 255, 255, .9);
 
     font-size: .9rem;
+
+}
+
+.kara {
+
+    color: #ffffff;
+
+}
+
+.oke {
+
+    color: #ff4fa3;
+
+    text-shadow:
+        0 0 10px #ff4fa3,
+        0 0 22px #ff4fa3,
+        0 0 40px rgba(255, 79, 163, .45);
+
+}
+
+.year {
+
+    color: #ffffff;
+
+}
+
+@keyframes letreiro {
+
+    0% {
+
+        transform: rotate(-3deg);
+
+        filter: brightness(1);
+
+    }
+
+    25% {
+
+        filter: brightness(1.15);
+
+    }
+
+    50% {
+
+        transform: rotate(3deg);
+
+        filter: brightness(.9);
+
+    }
+
+    75% {
+
+        filter: brightness(1.15);
+
+    }
+
+    100% {
+
+        transform: rotate(-3deg);
+
+        filter: brightness(1);
+
+    }
+
+}
+
+.badge {
+
+    background: #ffe34d;
+
+    color: #111;
+
+    font-weight: 900;
+
+}
+
+@media (max-width:768px) {
+
+    .whatsBox h2 {
+
+        font-size: 1.8rem;
+
+        line-height: 1.25;
+
+        word-break: normal;
+
+        overflow-wrap: break-word;
+
+    }
+
+}
+
+.pixText:read-only {
+
+    color: #111;
+
+    -webkit-text-fill-color: #111;
+
+    opacity: 1;
+
+}
+
+@keyframes cardEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px) scale(.98);
+
+        filter: blur(4px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+
+        filter: blur(0);
+
+    }
 
 }

@@ -29,26 +29,24 @@ export default function Success() {
 
             <div className={styles.confetti2}></div>
 
-            <span className={`${styles.sparkle} ${styles.spark1}`}>✨</span>
-            <span className={`${styles.sparkle} ${styles.spark2}`}>⭐</span>
-            <span className={`${styles.sparkle} ${styles.spark3}`}>💖</span>
-
             <span className={styles.badge}>
                 INSCRIÇÃO RECEBIDA
             </span>
 
             <h1 className={styles.finishTitle}>
-                KARAOKÊ 2026
+                <span className={styles.kara}>LTKARA</span>
+                <span className={styles.oke}>OKÊ</span>
+                <span className={styles.year}> 2026</span>
             </h1>
 
             <p className={styles.finishSubtitle}>
-                Campo Largo • Edição Especial
+                Clube Quapasso • Campo Largo/PR • Edição Especial
             </p>
 
             <div className={styles.finishDivider}></div>
 
             <h2 className={styles.finishThanks}>
-                Obrigado pela inscrição!
+                Obrigado e prepare a voz!!!
             </h2>
 
             <p className={styles.finishText}>
@@ -57,12 +55,7 @@ export default function Success() {
 
                 <br /><br />
 
-                Estamos muito felizes por ter você
-                participando do nosso Karaokê.
-
-                <br /><br />
-
-                Nos vemos no palco!
+                Nos vemos no palco dia 29 de agosto!
 
             </p>
 

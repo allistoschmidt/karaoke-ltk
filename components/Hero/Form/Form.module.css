@@ -462,7 +462,14 @@
 
     .eventTitle {
 
-        font-size: 2.2rem;
+        font-size: clamp(2.2rem, 6vw, 3rem);
+
+        font-weight: 900;
+
+        letter-spacing: 2px;
+
+        text-shadow:
+            4px 4px 0 rgba(0, 0, 0, .15);
 
     }
 
@@ -490,5 +497,17 @@
         display: none;
 
     }
+
+}
+
+.modalSuccess {
+
+    background:
+        linear-gradient(#050505, #111) padding-box,
+        linear-gradient(135deg,
+            #ff2d95,
+            #ffcf33,
+            #54d9ff,
+            #ff2d95) border-box;
 
 }
